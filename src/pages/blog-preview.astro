@@ -30,7 +30,10 @@ const previewAuthorizationError = async (
   let response: Response;
   try {
     response = await fetch(`${CMS_API_BASE_URL}/api/v1/users/me`, {
-      headers: { Authorization: `Bearer ${accessToken}`, Accept: 'application/json' },
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        Accept: 'application/json',
+      },
     });
   } catch {
     return new Response('Preview authentication is temporarily unavailable', {
